@@ -18,6 +18,8 @@ function toggle(element) {
       localStorage.setItem(siguienteId, "");
     }
   }
+
+  actualizarContador();
 }
 
 window.onload = () => {
@@ -36,4 +38,26 @@ window.onload = () => {
       }
     }
   });
+  actualizarContador();
 };
+
+function resetMalla() {
+  const confirmar = confirm("¿Estás segura de que quieres borrar todo tu avance?");
+  if (confirmar) {
+    localStorage.clear();
+    location.reload();
+  }
+}
+
+function guardarMalla() {
+  alert("¡Tu avance se ha guardado exitosamente! 💾");
+}
+
+function actualizarContador() {
+  const total = document.querySelectorAll('.materia').length;
+  const aprobadas = document.querySelectorAll('.materia.aprobada').length;
+  const contador = document.getElementById('contador');
+  if (contador) {
+    contador.textContent = `Materias aprobadas: ${aprobadas} / ${total}`;
+  }
+}
