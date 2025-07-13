@@ -11,45 +11,50 @@ h1 {
 }
 
 h2 {
-  margin-top: 30px;
+  margin-top: 40px;
   color: #884ea0;
 }
 
 .materias {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
   gap: 12px;
+  padding: 10px;
   margin-bottom: 20px;
 }
 
+/* 🌸 Habilitadas (rosado pastel) */
 .materia {
-  background-color: #e6ccf5;
-  border: 2px solid #b583d1;
+  background-color: #ffe0f0;
+  border: 2px solid #d48bb0;
   color: #4a235a;
   border-radius: 12px;
   padding: 12px;
-  min-width: 180px;
+  min-width: 200px;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 2px 2px 8px rgba(178, 126, 230, 0.2);
+  flex-shrink: 0;
 }
 
 .materia:hover {
-  background-color: #d4b5f2;
+  background-color: #f8cde3;
 }
 
+/* ✅ Aprobadas (Lila pastel) */
 .materia.aprobada {
-  background-color: #d5f5e3;
-  border-color: #58d68d;
-  color: #196f3d;
+  background-color: #e6ccf5;
+  border-color: #b583d1;
+  color: #5a2a85;
   text-decoration: line-through;
 }
 
+/* 🔒 Bloqueadas (Salmón pastel) */
 .bloqueada {
-  background-color: #f0f0f0;
-  border-color: #ccc;
-  color: #888;
+  background-color: #ffd6b3;
+  border-color: #e9967a;
+  color: #996f5e;
   pointer-events: none;
 }
 
