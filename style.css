@@ -15,12 +15,23 @@ h2 {
   color: #884ea0;
 }
 
-.materias {
+.contenedor-malla {
   display: flex;
   overflow-x: auto;
-  gap: 12px;
-  padding: 10px;
-  margin-bottom: 20px;
+  gap: 40px;
+  padding: 20px;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+}
+
+.bloque-semestre {
+  min-width: 360px;
+  background-color: #fef9ff;
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(140, 120, 160, 0.1);
+  padding: 10px 20px;
+  flex-shrink: 0;
+
 }
 
 /* 🌸 Habilitadas (rosado pastel) */
