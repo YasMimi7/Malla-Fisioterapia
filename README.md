@@ -3,37 +3,37 @@
 ---
 
 ## 🧩 Primer Semestre
-- [ ] Anatomía Funcional I (1600173)
-- [ ] Biomecánica (1600174)
-- [ ] Fisioterapia Preventiva (1600176)
-- [ ] Soporte Básico de Vida (1600178)
-- [ ] Psicología Aplicada (1600177)
-- [ ] Antropología (1600175)
+- [x] Anatomía Funcional I (1600173)
+- [x] Biomecánica (1600174)
+- [x] Fisioterapia Preventiva (1600176)
+- [x] Soporte Básico de Vida (1600178)
+- [x] Psicología Aplicada (1600177)
+- [x] Antropología (1600175)
 
 ## 🧩 Segundo Semestre
-- [ ] Anatomía Funcional II (1600179)
-- [ ] Kinesiología (1600182)
-- [ ] Kineflaxia (1600181)
-- [ ] Fisiología (1600180)
-- [ ] Fisioterapia General (1600183)
-- [ ] Fisioterapia Comunitaria (1600184)
+- [x] Anatomía Funcional II (1600179)
+- [x] Kinesiología (1600182)
+- [x] Kineflaxia (1600181)
+- [x] Fisiología (1600180)
+- [x] Fisioterapia General (1600183)
+- [x] Fisioterapia Comunitaria (1600184)
 
 ## 🧩 Tercer Semestre
 - [ ] Semiología Kinésica (1600189)
-- [ ] Kinesioterapia General (1600188)
-- [ ] Recursos Biomecánicos (1600187)
+- [x] Kinesioterapia General (1600188)
+- [x] Recursos Biomecánicos (1600187)
 - [ ] Neurofisiología Kinésica (1600185)
-- [ ] Fisioterapia Aplicada (1600190)
-- [ ] Metodología de la Investigación (1600188)
+- [x] Fisioterapia Aplicada (1600190)
+- [x] Metodología de la Investigación (1600188)
 
 ## 🧩 Cuarto Semestre
 - [ ] Neurokinesiología (1600191)
 - [ ] Fisioterapia de Adulto Mayor (1600196)
 - [ ] Terapia Ocupacional (1600195)
 - [ ] Electroterapia I (1600193)
-- [ ] Apoyo Nutricional (1600194)
+- [x] Apoyo Nutricional (1600194)
 - [ ] Deontología (1600197)
-- [ ] Quechua (1600192)
+- [x] Quechua (1600192)
 
 ## 🧩 Quinto Semestre
 - [ ] Fundamentos de Evaluación Kinésica (1600198)
