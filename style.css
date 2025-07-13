@@ -11,26 +11,33 @@ h1 {
 }
 
 h2 {
-  margin-top: 40px;
+  margin-top: 20px;
   color: #884ea0;
 }
 
 .contenedor-malla {
-  display: flex;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 40px;
   padding: 20px;
-  align-items: flex-start;
-  scroll-behavior: smooth;
+}
+
+.contenedor-malla::-webkit-scrollbar {
+  height: 10px;
+}
+.contenedor-malla::-webkit-scrollbar-thumb {
+  background: #d8b4f8;
+  border-radius: 10px;
+}
+.contenedor-malla::-webkit-scrollbar-track {
+  background: #f3e8ff;
 }
 
 .bloque-semestre {
-  min-width: 360px;
   background-color: #fef9ff;
   border-radius: 16px;
   box-shadow: 0 0 8px rgba(140, 120, 160, 0.1);
   padding: 10px 20px;
-  flex-shrink: 0;
 }
 
 .materias {
@@ -51,7 +58,6 @@ h2 {
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 2px 2px 8px rgba(178, 126, 230, 0.2);
-  flex-shrink: 0;
 }
 
 .materia:hover {
@@ -65,18 +71,11 @@ h2 {
   text-decoration: line-through;
 }
 
-.bloqueada {
+.materia.bloqueada {
   background-color: #ffd6b3;
   border-color: #e9967a;
   color: #996f5e;
   pointer-events: none;
-}
-
-.materia span {
-  display: block;
-  font-size: 12px;
-  color: #6c3483;
-  margin-top: 4px;
 }
 
 .botones-malla {
@@ -118,4 +117,4 @@ h2 {
   width: fit-content;
   border-radius: 12px;
   box-shadow: 2px 2px 8px rgba(178, 126, 230, 0.1);
-  }
+    }
