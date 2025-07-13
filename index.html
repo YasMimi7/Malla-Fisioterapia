@@ -5,128 +5,113 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Malla Curricular – Fisioterapia y Kinesiología (Plan 2-2019)</h1>  <div class="contenedor-malla">
-    <!-- SEMESTRE 1 -->
+  <h1>Malla Curricular – Fisioterapia y Kinesiología (Plan 2-2019)</h1>  <div id="contador" class="contador">Materias aprobadas: 0 / 60</div>  <div class="botones-malla">
+    <button onclick="guardarMalla()" class="guardar-btn">💾 Guardar avance</button>
+    <button onclick="resetMalla()" class="reset-btn">🧹 Reiniciar malla</button>
+  </div>  <div class="contenedor-malla">
     <div class="bloque-semestre">
       <h2>1er Semestre</h2>
       <div class="materias">
-        <div class="materia" id="anat1" onclick="toggle(this)" data-habilita="anat2">Anatomía Funcional I<br><span>1600173</span></div>
-        <div class="materia" onclick="toggle(this)">Biomecánica<br><span>1600174</span></div>
-        <div class="materia" onclick="toggle(this)">Fisioterapia Preventiva<br><span>1600176</span></div>
-        <div class="materia" onclick="toggle(this)">Soporte Básico de Vida<br><span>1600178</span></div>
-        <div class="materia" onclick="toggle(this)">Psicología Aplicada<br><span>1600177</span></div>
-        <div class="materia" onclick="toggle(this)">Antropología<br><span>1600175</span></div>
+        <div class="materia" id="anat1" onclick="toggle(this)">Anatomía I</div>
+        <div class="materia" id="fisiol1" onclick="toggle(this)">Fisiología I</div>
+        <div class="materia" id="quim" onclick="toggle(this)">Química</div>
+        <div class="materia" id="intro" onclick="toggle(this)">Introducción a la Fisioterapia</div>
+        <div class="materia" id="bio" onclick="toggle(this)">Biología Celular</div>
       </div>
-    </div><!-- SEMESTRE 2 -->
-<div class="bloque-semestre">
+    </div><div class="bloque-semestre">
   <h2>2do Semestre</h2>
   <div class="materias">
-    <div class="materia bloqueada" id="anat2" onclick="toggle(this)" data-habilita="semio">Anatomía Funcional II<br><span>1600179</span></div>
-    <div class="materia" onclick="toggle(this)">Kinesiología<br><span>1600182</span></div>
-    <div class="materia" onclick="toggle(this)">Kineflaxia<br><span>1600181</span></div>
-    <div class="materia" onclick="toggle(this)">Fisiología<br><span>1600180</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia General<br><span>1600183</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia Comunitaria<br><span>1600184</span></div>
+    <div class="materia" id="anat2" onclick="toggle(this)">Anatomía II</div>
+    <div class="materia" id="fisiol2" onclick="toggle(this)">Fisiología II</div>
+    <div class="materia" id="fisica" onclick="toggle(this)">Física Médica</div>
+    <div class="materia" id="psico" onclick="toggle(this)">Psicología General</div>
+    <div class="materia" id="bioq" onclick="toggle(this)">Bioquímica</div>
   </div>
 </div>
 
-<!-- SEMESTRE 3 -->
 <div class="bloque-semestre">
   <h2>3er Semestre</h2>
   <div class="materias">
-    <div class="materia bloqueada" id="semio" onclick="toggle(this)" data-habilita="neuro">Semiología Kinésica<br><span>1600189</span></div>
-    <div class="materia" onclick="toggle(this)">Kinesioterapia General<br><span>1600188</span></div>
-    <div class="materia" onclick="toggle(this)">Recursos Biomecánicos<br><span>1600187</span></div>
-    <div class="materia" onclick="toggle(this)">Neurofisiología Kinésica<br><span>1600185</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia Aplicada<br><span>1600190</span></div>
-    <div class="materia" onclick="toggle(this)">Metodología de la Investigación<br><span>1600188</span></div>
+    <div class="materia" id="kin1" onclick="toggle(this)">Kinesiología I</div>
+    <div class="materia" id="neuroan" onclick="toggle(this)">Neuroanatomía</div>
+    <div class="materia" id="semiol" onclick="toggle(this)">Semiología</div>
+    <div class="materia" id="psicodes" onclick="toggle(this)">Psicología del Desarrollo</div>
+    <div class="materia" id="fisio1" onclick="toggle(this)">Fisioterapia I</div>
   </div>
 </div>
 
-<!-- SEMESTRE 4 -->
 <div class="bloque-semestre">
   <h2>4to Semestre</h2>
   <div class="materias">
-    <div class="materia bloqueada" id="neuro" onclick="toggle(this)">Neurokinesiología<br><span>1600191</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia del Adulto Mayor<br><span>1600196</span></div>
-    <div class="materia" onclick="toggle(this)">Terapia Ocupacional<br><span>1600195</span></div>
-    <div class="materia" onclick="toggle(this)">Electroterapia I<br><span>1600193</span></div>
-    <div class="materia" onclick="toggle(this)">Apoyo Nutricional<br><span>1600194</span></div>
-    <div class="materia" onclick="toggle(this)">Deontología<br><span>1600197</span></div>
-    <div class="materia" onclick="toggle(this)">Quechua<br><span>1600192</span></div>
+    <div class="materia" id="kin2" onclick="toggle(this)">Kinesiología II</div>
+    <div class="materia" id="neurofisiol" onclick="toggle(this)">Neurofisiología</div>
+    <div class="materia" id="fisio2" onclick="toggle(this)">Fisioterapia II</div>
+    <div class="materia" id="patoclin" onclick="toggle(this)">Patología Clínica</div>
+    <div class="materia" id="termo" onclick="toggle(this)">Termoterapia</div>
   </div>
 </div>
 
-<!-- SEMESTRE 5 -->
 <div class="bloque-semestre">
   <h2>5to Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Fundamentos de Evaluación Kinésica<br><span>1600198</span></div>
-    <div class="materia" onclick="toggle(this)">Terapias Alternativas<br><span>1600202</span></div>
-    <div class="materia" onclick="toggle(this)">Patología Aplicada a la Fisioterapia<br><span>1600199</span></div>
-    <div class="materia" onclick="toggle(this)">Farmacología Aplicada<br><span>1600201</span></div>
-    <div class="materia" onclick="toggle(this)">Bioinformática<br><span>1600200</span></div>
-    <div class="materia" onclick="toggle(this)">Modalidades de Graduación I<br><span>1600203</span></div>
+    <div class="materia" id="electro" onclick="toggle(this)">Electroterapia</div>
+    <div class="materia" id="cardio1" onclick="toggle(this)">Cardiología I</div>
+    <div class="materia" id="resp1" onclick="toggle(this)">Fisioterapia Respiratoria I</div>
+    <div class="materia" id="ortop" onclick="toggle(this)">Ortopedia</div>
+    <div class="materia" id="neuro1" onclick="toggle(this)">Neurorehabilitación I</div>
   </div>
 </div>
 
-<!-- SEMESTRE 6 -->
 <div class="bloque-semestre">
   <h2>6to Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas I Traumatología<br><span>1600205</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas I Gineco-Obstetricia<br><span>1600204</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas I Comunidad<br><span>1600206</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas I Neurología<br><span>1600207</span></div>
+    <div class="materia" id="balneo" onclick="toggle(this)">Balneoterapia</div>
+    <div class="materia" id="cardio2" onclick="toggle(this)">Cardiología II</div>
+    <div class="materia" id="resp2" onclick="toggle(this)">Fisioterapia Respiratoria II</div>
+    <div class="materia" id="neuro2" onclick="toggle(this)">Neurorehabilitación II</div>
+    <div class="materia" id="invest1" onclick="toggle(this)">Investigación I</div>
   </div>
 </div>
 
-<!-- SEMESTRE 7 -->
 <div class="bloque-semestre">
   <h2>7mo Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Manejo Kinésico Físico Traumatológico<br><span>1600210</span></div>
-    <div class="materia" onclick="toggle(this)">Manejo Kinésico Físico Ginecológico y Obstétrico<br><span>1600211</span></div>
-    <div class="materia" onclick="toggle(this)">Rehabilitación Basada en la Comunidad<br><span>1600209</span></div>
-    <div class="materia" onclick="toggle(this)">Manejo Kinésico Físico Neurológico<br><span>1600213</span></div>
-    <div class="materia" onclick="toggle(this)">Manejo Kinésico Físico Dermatofuncional<br><span>1600214</span></div>
-    <div class="materia" onclick="toggle(this)">Manejo Kinésico Físico Cardiorespiratorio<br><span>1600212</span></div>
-    <div class="materia" onclick="toggle(this)">Electroterapia II<br><span>1600208</span></div>
+    <div class="materia" id="gine" onclick="toggle(this)">Ginecología y Obstetricia</div>
+    <div class="materia" id="geriatr" onclick="toggle(this)">Geriatría</div>
+    <div class="materia" id="ped" onclick="toggle(this)">Pediatría</div>
+    <div class="materia" id="onc" onclick="toggle(this)">Oncología</div>
+    <div class="materia" id="invest2" onclick="toggle(this)">Investigación II</div>
   </div>
 </div>
 
-<!-- SEMESTRE 8 -->
 <div class="bloque-semestre">
   <h2>8vo Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Imagenología Aplicada<br><span>1600225</span></div>
-    <div class="materia" onclick="toggle(this)">Evaluación Kinésica Funcional<br><span>1600226</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia Laboral y Ergonomía<br><span>1600219</span></div>
-    <div class="materia" onclick="toggle(this)">Bases Generales de la Psicomotricidad<br><span>1600217</span></div>
-    <div class="materia" onclick="toggle(this)">Fisioterapia Deportiva<br><span>1600216</span></div>
-    <div class="materia" onclick="toggle(this)">Bases Generales de la Terapia Manual<br><span>1600218</span></div>
+    <div class="materia" id="deport" onclick="toggle(this)">Fisioterapia Deportiva</div>
+    <div class="materia" id="ocu" onclick="toggle(this)">Terapia Ocupacional</div>
+    <div class="materia" id="music" onclick="toggle(this)">Musicoterapia</div>
+    <div class="materia" id="etica" onclick="toggle(this)">Ética Profesional</div>
+    <div class="materia" id="adm" onclick="toggle(this)">Administración</div>
   </div>
 </div>
 
-<!-- SEMESTRE 9 -->
 <div class="bloque-semestre">
   <h2>9no Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas II Adulto Mayor<br><span>1600225</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas II Quemados<br><span>1600222</span></div>
-    <div class="materia" onclick="toggle(this)">Gestión en Salud<br><span>1600221</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas II Pediatría<br><span>1600224</span></div>
-    <div class="materia" onclick="toggle(this)">Estancias Clínicas II Estética<br><span>1600223</span></div>
+    <div class="materia" id="interno1" onclick="toggle(this)">Internado Hospitalario</div>
+    <div class="materia" id="recrea" onclick="toggle(this)">Recreación y Tiempo Libre</div>
+    <div class="materia" id="socio" onclick="toggle(this)">Sociología de la Salud</div>
+    <div class="materia" id="bioetica" onclick="toggle(this)">Bioética</div>
   </div>
 </div>
 
-<!-- SEMESTRE 10 -->
 <div class="bloque-semestre">
   <h2>10mo Semestre</h2>
   <div class="materias">
-    <div class="materia" onclick="toggle(this)">Modalidades de Graduación II<br><span>1600226</span></div>
+    <div class="materia" id="interno2" onclick="toggle(this)">Internado Comunitario</div>
+    <div class="materia" id="tesis" onclick="toggle(this)">Trabajo de Grado</div>
   </div>
 </div>
 
   </div>  <script src="script.js"></script></body>
-  </html>
+      </html>
