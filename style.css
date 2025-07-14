@@ -1,120 +1,32 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fdf7ff;
-  padding: 20px;
-  color: #333;
-}
+body { font-family: Arial, sans-serif; background-color: #fefeff; margin: 0; padding: 20px; overflow-x: auto; }
 
-h1 {
-  color: #6c3483;
-  text-align: center;
-}
+h1 { text-align: center; color: #4b2c5e; }
 
-h2 {
-  margin-top: 20px;
-  color: #884ea0;
-}
+.contador { text-align: center; font-weight: bold; margin: 10px 0; }
 
-.contenedor-malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 40px;
-  padding: 20px;
-}
+.botones-malla { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
 
-.contenedor-malla::-webkit-scrollbar {
-  height: 10px;
-}
-.contenedor-malla::-webkit-scrollbar-thumb {
-  background: #d8b4f8;
-  border-radius: 10px;
-}
-.contenedor-malla::-webkit-scrollbar-track {
-  background: #f3e8ff;
-}
+.guardar-btn, .reset-btn { padding: 10px 15px; border: none; border-radius: 10px; background-color: #c8a2c8; color: white; font-weight: bold; cursor: pointer; }
 
-.bloque-semestre {
-  background-color: #fef9ff;
-  border-radius: 16px;
-  box-shadow: 0 0 8px rgba(140, 120, 160, 0.1);
-  padding: 10px 20px;
-}
+.guardar-btn:hover, .reset-btn:hover { background-color: #b48fb4; }
 
-.materias {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 10px 0;
-}
+.contenedor-malla { display: flex; flex-direction: row; overflow-x: auto; gap: 30px; padding: 10px; }
 
-.materia {
-  background-color: #ffe0f0;
-  border: 2px solid #d48bb0;
-  color: #4a235a;
-  border-radius: 12px;
-  padding: 12px;
-  min-width: 160px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 2px 2px 8px rgba(178, 126, 230, 0.2);
-}
+.bloque-semestre { min-width: 250px; background-color: #f8f0ff; border-radius: 15px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 
-.materia:hover {
-  background-color: #f8cde3;
-}
+h2 { text-align: center; color: #764ba2; }
 
-.materia.aprobada {
-  background-color: #e6ccf5;
-  border-color: #b583d1;
-  color: #5a2a85;
-  text-decoration: line-through;
-}
+.materias { display: flex; flex-direction: column; gap: 10px; }
 
-.materia.bloqueada {
-  background-color: #ffd6b3;
-  border-color: #e9967a;
-  color: #996f5e;
-  pointer-events: none;
-}
+.materia { padding: 8px; border-radius: 10px; text-align: center; font-size: 14px; background-color: #f5f5f5; cursor: pointer; transition: all 0.2s ease-in-out; border: 1px solid transparent; }
 
-.botones-malla {
-  text-align: center;
-  margin-bottom: 30px;
-}
+.materia:hover { box-shadow: 0 0 5px rgba(118, 75, 162, 0.3); }
 
-.guardar-btn,
-.reset-btn {
-  background-color: #e6ccf5;
-  color: #5a2a85;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin: 5px;
-  box-shadow: 2px 2px 6px rgba(140, 120, 160, 0.2);
-  transition: background-color 0.3s;
-}
+.materia.aprobada { text-decoration: line-through; background-color: #e4d0f4; color: #333; }
 
-.guardar-btn:hover {
-  background-color: #d0a8f0;
-}
+.materia.habilitada { background-color: #fcd6e3; color: #000; font-weight: bold; }
 
-.reset-btn:hover {
-  background-color: #d5b3f0;
-}
+.materia.bloqueada { background-color: #fbd1c6; color: #aaa; cursor: not-allowed; }
 
-.contador {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: #6c3483;
-  background-color: #f5e6ff;
-  border: 2px solid #d8b4f8;
-  padding: 10px 20px;
-  margin: 10px auto 20px;
-  width: fit-content;
-  border-radius: 12px;
-  box-shadow: 2px 2px 8px rgba(178, 126, 230, 0.1);
-    }
+@media (max-width: 600px) { .contenedor-malla { flex-direction: column; } }
+
