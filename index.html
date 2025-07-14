@@ -1,122 +1,56 @@
-<!DOCTYPE html><html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Malla Fisioterapia – UMSS</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .contenedor-malla::-webkit-scrollbar {
-      height: 10px;
-    }
-    .contenedor-malla::-webkit-scrollbar-thumb {
-      background: #d8b4f8;
-      border-radius: 10px;
-    }
-    .contenedor-malla::-webkit-scrollbar-track {
-      background: #f3e8ff;
-    }
-  </style>
-</head>
-<body>
-  <h1>Malla Curricular – Fisioterapia y Kinesiología (Plan 2-2019)</h1>  <div id="contador" class="contador">Materias aprobadas: 0 / 60</div>  <div class="botones-malla">
-    <button onclick="guardarMalla()" class="guardar-btn">💾 Guardar avance</button>
-    <button onclick="resetMalla()" class="reset-btn">🧹 Reiniciar malla</button>
-  </div>  <div class="contenedor-malla" style="white-space: nowrap; display: flex; overflow-x: auto; gap: 40px; padding: 20px; scroll-behavior: smooth;">
-    <!-- Semestres insertados aquí -->
-    <div class="bloque-semestre">
-      <h2>1er Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="anat1" onclick="toggle(this)">Anatomía I</div>
-        <div class="materia" id="fisiol1" onclick="toggle(this)">Fisiología I</div>
-        <div class="materia" id="quim" onclick="toggle(this)">Química</div>
-        <div class="materia" id="intro" onclick="toggle(this)">Introducción a la Fisioterapia</div>
-        <div class="materia" id="bio" onclick="toggle(this)">Biología Celular</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>2do Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="anat2" onclick="toggle(this)">Anatomía II</div>
-        <div class="materia" id="fisiol2" onclick="toggle(this)">Fisiología II</div>
-        <div class="materia" id="fisica" onclick="toggle(this)">Física Médica</div>
-        <div class="materia" id="psico" onclick="toggle(this)">Psicología General</div>
-        <div class="materia" id="bioq" onclick="toggle(this)">Bioquímica</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>3er Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="kin1" onclick="toggle(this)">Kinesiología I</div>
-        <div class="materia" id="neuroan" onclick="toggle(this)">Neuroanatomía</div>
-        <div class="materia" id="semiol" onclick="toggle(this)">Semiología</div>
-        <div class="materia" id="psicodes" onclick="toggle(this)">Psicología del Desarrollo</div>
-        <div class="materia" id="fisio1" onclick="toggle(this)">Fisioterapia I</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>4to Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="kin2" onclick="toggle(this)">Kinesiología II</div>
-        <div class="materia" id="neurofisiol" onclick="toggle(this)">Neurofisiología</div>
-        <div class="materia" id="fisio2" onclick="toggle(this)">Fisioterapia II</div>
-        <div class="materia" id="patoclin" onclick="toggle(this)">Patología Clínica</div>
-        <div class="materia" id="termo" onclick="toggle(this)">Termoterapia</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>5to Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="electro" onclick="toggle(this)">Electroterapia</div>
-        <div class="materia" id="cardio1" onclick="toggle(this)">Cardiología I</div>
-        <div class="materia" id="resp1" onclick="toggle(this)">Fisioterapia Respiratoria I</div>
-        <div class="materia" id="ortop" onclick="toggle(this)">Ortopedia</div>
-        <div class="materia" id="neuro1" onclick="toggle(this)">Neurorehabilitación I</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>6to Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="balneo" onclick="toggle(this)">Balneoterapia</div>
-        <div class="materia" id="cardio2" onclick="toggle(this)">Cardiología II</div>
-        <div class="materia" id="resp2" onclick="toggle(this)">Fisioterapia Respiratoria II</div>
-        <div class="materia" id="neuro2" onclick="toggle(this)">Neurorehabilitación II</div>
-        <div class="materia" id="invest1" onclick="toggle(this)">Investigación I</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>7mo Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="gine" onclick="toggle(this)">Ginecología y Obstetricia</div>
-        <div class="materia" id="geriatr" onclick="toggle(this)">Geriatría</div>
-        <div class="materia" id="ped" onclick="toggle(this)">Pediatría</div>
-        <div class="materia" id="onc" onclick="toggle(this)">Oncología</div>
-        <div class="materia" id="invest2" onclick="toggle(this)">Investigación II</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>8vo Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="deport" onclick="toggle(this)">Fisioterapia Deportiva</div>
-        <div class="materia" id="ocu" onclick="toggle(this)">Terapia Ocupacional</div>
-        <div class="materia" id="music" onclick="toggle(this)">Musicoterapia</div>
-        <div class="materia" id="etica" onclick="toggle(this)">Ética Profesional</div>
-        <div class="materia" id="adm" onclick="toggle(this)">Administración</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>9no Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="interno1" onclick="toggle(this)">Internado Hospitalario</div>
-        <div class="materia" id="recrea" onclick="toggle(this)">Recreación y Tiempo Libre</div>
-        <div class="materia" id="socio" onclick="toggle(this)">Sociología de la Salud</div>
-        <div class="materia" id="bioetica" onclick="toggle(this)">Bioética</div>
-      </div>
-    </div>
-    <div class="bloque-semestre">
-      <h2>10mo Semestre</h2>
-      <div class="materias">
-        <div class="materia" id="interno2" onclick="toggle(this)">Internado Comunitario</div>
-        <div class="materia" id="tesis" onclick="toggle(this)">Trabajo de Grado</div>
-      </div>
-    </div>
-  </div>  <script src="script.js"></script></body>
-          </html>
+// script.js
+
+const materias = document.querySelectorAll('.materia'); const contador = document.getElementById('contador');
+
+// Diccionario de prerrequisitos (ID de materia => array de IDs que la habilitan) const prerrequisitos = { 'Anatomía Funcional II': ['Anatomía Funcional I'], 'Kinesiología': ['Biomecánica'], 'Kinefilaxia': ['Fisioterapia Preventiva'], 'Fisioterapia General': ['Soporte Básico de Vida'], 'Fisioterapia Comunitaria': ['Psicología Aplicada'], 'Quechua': ['Antropología'],
+
+'Semiología Kinesica': ['Anatomía Funcional II'], 'Kinesioterapia General': ['Kinesiología'], 'Recursos Biomecánicos': ['Kinefilaxia'], 'Neurofisiología Kinesica': ['Fisicología'], 'Fisioterapia Aplicada': ['Fisioterapia General'], 'Metodología de la Investigación': ['Fisioterapia Comunitaria'],
+
+'Neurokinesiología': ['Semiología Kinesica'], 'Fisioterapia del Adulto Mayor': ['Kinesioterapia General'], 'Terapia Ocupacional': ['Recursos Biomecánicos'], 'Electroterapia I': ['Neurofisiología Kinesica'], 'Apoyo Nutricional': ['Fisioterapia Aplicada'], 'Deontología': ['Metodología de la Investigación'],
+
+'Fundamentos Generales de la Evaluación Kinesica': ['Neurokinesiología'], 'Terapias Alternativas': ['Fisioterapia del Adulto Mayor'], 'Patología Aplicada a la Fisioterapia': ['Terapia Ocupacional'], 'Farmacología Aplicada a la Fisioterapia': ['Electroterapia I'], 'Bioinformática': ['Deontología'],
+
+'Estancias Clínicas I – Traumatología': ['Fundamentos Generales de la Evaluación Kinesica'], 'Estancias Clínicas I – Ginecología y Obstetricia': ['Terapias Alternativas'], 'Estancias Clínicas I – Comunidad': ['Patología Aplicada a la Fisioterapia'], 'Estancias Clínicas I – Neurología': ['Farmacología Aplicada a la Fisioterapia'], 'Modalidades de Graduación I': ['Bioinformática'],
+
+'Manejo Kinesico Físico – Traumatología': ['Estancias Clínicas I – Traumatología'], 'Manejo Kinesico Físico – Ginecología y Obstetricia': ['Estancias Clínicas I – Ginecología y Obstetricia'], 'Rehabilitación Basada en la Comunidad': ['Estancias Clínicas I – Comunidad'], 'Manejo Kinesico Físico – Neurología': ['Estancias Clínicas I – Neurología'], 'Manejo Kinesico Físico – Dermatofunción': ['Modalidades de Graduación I'], 'Manejo Kinesico Físico – Cardiorespiratorio': ['Modalidades de Graduación I'], 'Electroterapia II': ['Modalidades de Graduación I'],
+
+'Imagenología Aplicada a la Fisioterapia': ['Manejo Kinesico Físico – Traumatología'], 'Evaluación Kinesica Funcional': ['Manejo Kinesico Físico – Ginecología y Obstetricia'], 'Fisioterapia Laboral y Ergonomía': ['Rehabilitación Basada en la Comunidad'], 'Bases Generales de la Psicomotricidad': ['Manejo Kinesico Físico – Neurología'], 'Estancias Clínicas II – Estética': ['Manejo Kinesico Físico – Dermatofunción'], 'Fisioterapia Deportiva': ['Manejo Kinesico Físico – Cardiorespiratorio'], 'Bases Generales de la Terapia Manual': ['Electroterapia II'],
+
+'Estancias Clínicas II – Adulto Mayor': ['Imagenología Aplicada a la Fisioterapia'], 'Estancias Clínicas II – Quemados': ['Evaluación Kinesica Funcional'], 'Gestión en Salud': ['Fisioterapia Laboral y Ergonomía'], 'Estancias Clínicas II – Pediatría': ['Bases Generales de la Psicomotricidad'],
+
+'Modalidades de Graduación III': [ 'Estancias Clínicas II – Adulto Mayor', 'Estancias Clínicas II – Quemados', 'Gestión en Salud', 'Estancias Clínicas II – Pediatría', 'Estancias Clínicas II – Estética' ] };
+
+// Recuperar progreso guardado let aprobadas = JSON.parse(localStorage.getItem('aprobadas')) || [];
+
+function actualizarVista() { let total = 0;
+
+materias.forEach(el => { const nombre = el.textContent.trim(); el.classList.remove('aprobada', 'habilitada', 'bloqueada');
+
+if (aprobadas.includes(nombre)) {
+  el.classList.add('aprobada');
+  total++;
+} else if (
+  !prerrequisitos[nombre] ||
+  prerrequisitos[nombre].every(m => aprobadas.includes(m))
+) {
+  el.classList.add('habilitada');
+} else {
+  el.classList.add('bloqueada');
+}
+
+});
+
+contador.textContent = Materias aprobadas: ${total}; }
+
+function toggle(el) { const nombre = el.textContent.trim(); if (!el.classList.contains('habilitada') && !el.classList.contains('aprobada')) return;
+
+if (aprobadas.includes(nombre)) { aprobadas = aprobadas.filter(m => m !== nombre); } else { aprobadas.push(nombre); }
+
+actualizarVista(); localStorage.setItem('aprobadas', JSON.stringify(aprobadas)); }
+
+function guardarMalla() { localStorage.setItem('aprobadas', JSON.stringify(aprobadas)); alert('✅ Avance guardado correctamente.'); }
+
+function resetMalla() { if (confirm('¿Seguro que deseas reiniciar toda la malla?')) { aprobadas = []; localStorage.removeItem('aprobadas'); actualizarVista(); } }
+
+actualizarVista();
+
