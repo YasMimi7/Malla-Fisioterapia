@@ -1,56 +1,135 @@
-// script.js
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Fisioterapia – UMSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Malla Curricular – Fisioterapia y Kinesiología (Plan 2-2019)</h1>  <div id="contador" class="contador">Materias aprobadas: 0</div>  <div class="botones-malla">
+    <button onclick="guardarMalla()" class="guardar-btn">💾 Guardar avance</button>
+    <button onclick="resetMalla()" class="reset-btn">🧹 Reiniciar malla</button>
+  </div>  <div class="contenedor-malla">
+    <!-- 1er Semestre -->
+    <div class="bloque-semestre">
+      <h2>1er Semestre</h2>
+      <div class="materias">
+        <div class="materia">Anatomía Funcional I</div>
+        <div class="materia">Biomecánica</div>
+        <div class="materia">Fisioterapia Preventiva</div>
+        <div class="materia">Soporte Básico de Vida</div>
+        <div class="materia">Psicología Aplicada</div>
+        <div class="materia">Antropología</div>
+      </div>
+    </div><!-- 2do Semestre -->
+<div class="bloque-semestre">
+  <h2>2do Semestre</h2>
+  <div class="materias">
+    <div class="materia">Anatomía Funcional II</div>
+    <div class="materia">Kinesiología</div>
+    <div class="materia">Kinefilaxia</div>
+    <div class="materia">Fisicología</div>
+    <div class="materia">Fisioterapia General</div>
+    <div class="materia">Fisioterapia Comunitaria</div>
+  </div>
+</div>
 
-const materias = document.querySelectorAll('.materia'); const contador = document.getElementById('contador');
+<!-- 3er Semestre -->
+<div class="bloque-semestre">
+  <h2>3er Semestre</h2>
+  <div class="materias">
+    <div class="materia">Semiología Kinesica</div>
+    <div class="materia">Kinesioterapia General</div>
+    <div class="materia">Recursos Biomecánicos</div>
+    <div class="materia">Neurofisiología Kinesica</div>
+    <div class="materia">Fisioterapia Aplicada</div>
+    <div class="materia">Metodología de la Investigación</div>
+  </div>
+</div>
 
-// Diccionario de prerrequisitos (ID de materia => array de IDs que la habilitan) const prerrequisitos = { 'Anatomía Funcional II': ['Anatomía Funcional I'], 'Kinesiología': ['Biomecánica'], 'Kinefilaxia': ['Fisioterapia Preventiva'], 'Fisioterapia General': ['Soporte Básico de Vida'], 'Fisioterapia Comunitaria': ['Psicología Aplicada'], 'Quechua': ['Antropología'],
+<!-- 4to Semestre -->
+<div class="bloque-semestre">
+  <h2>4to Semestre</h2>
+  <div class="materias">
+    <div class="materia">Neurokinesiología</div>
+    <div class="materia">Fisioterapia del Adulto Mayor</div>
+    <div class="materia">Terapia Ocupacional</div>
+    <div class="materia">Electroterapia I</div>
+    <div class="materia">Apoyo Nutricional</div>
+    <div class="materia">Deontología</div>
+    <div class="materia">Quechua</div>
+  </div>
+</div>
 
-'Semiología Kinesica': ['Anatomía Funcional II'], 'Kinesioterapia General': ['Kinesiología'], 'Recursos Biomecánicos': ['Kinefilaxia'], 'Neurofisiología Kinesica': ['Fisicología'], 'Fisioterapia Aplicada': ['Fisioterapia General'], 'Metodología de la Investigación': ['Fisioterapia Comunitaria'],
+<!-- 5to Semestre -->
+<div class="bloque-semestre">
+  <h2>5to Semestre</h2>
+  <div class="materias">
+    <div class="materia">Fundamentos Generales de la Evaluación Kinesica</div>
+    <div class="materia">Terapias Alternativas</div>
+    <div class="materia">Patología Aplicada a la Fisioterapia</div>
+    <div class="materia">Farmacología Aplicada a la Fisioterapia</div>
+    <div class="materia">Bioinformática</div>
+  </div>
+</div>
 
-'Neurokinesiología': ['Semiología Kinesica'], 'Fisioterapia del Adulto Mayor': ['Kinesioterapia General'], 'Terapia Ocupacional': ['Recursos Biomecánicos'], 'Electroterapia I': ['Neurofisiología Kinesica'], 'Apoyo Nutricional': ['Fisioterapia Aplicada'], 'Deontología': ['Metodología de la Investigación'],
+<!-- 6to Semestre -->
+<div class="bloque-semestre">
+  <h2>6to Semestre</h2>
+  <div class="materias">
+    <div class="materia">Estancias Clínicas I – Traumatología</div>
+    <div class="materia">Estancias Clínicas I – Ginecología y Obstetricia</div>
+    <div class="materia">Estancias Clínicas I – Comunidad</div>
+    <div class="materia">Estancias Clínicas I – Neurología</div>
+    <div class="materia">Modalidades de Graduación I</div>
+  </div>
+</div>
 
-'Fundamentos Generales de la Evaluación Kinesica': ['Neurokinesiología'], 'Terapias Alternativas': ['Fisioterapia del Adulto Mayor'], 'Patología Aplicada a la Fisioterapia': ['Terapia Ocupacional'], 'Farmacología Aplicada a la Fisioterapia': ['Electroterapia I'], 'Bioinformática': ['Deontología'],
+<!-- 7mo Semestre -->
+<div class="bloque-semestre">
+  <h2>7mo Semestre</h2>
+  <div class="materias">
+    <div class="materia">Manejo Kinesico Físico – Traumatología</div>
+    <div class="materia">Manejo Kinesico Físico – Ginecología y Obstetricia</div>
+    <div class="materia">Rehabilitación Basada en la Comunidad</div>
+    <div class="materia">Manejo Kinesico Físico – Neurología</div>
+    <div class="materia">Manejo Kinesico Físico – Dermatofunción</div>
+    <div class="materia">Manejo Kinesico Físico – Cardiorespiratorio</div>
+    <div class="materia">Electroterapia II</div>
+  </div>
+</div>
 
-'Estancias Clínicas I – Traumatología': ['Fundamentos Generales de la Evaluación Kinesica'], 'Estancias Clínicas I – Ginecología y Obstetricia': ['Terapias Alternativas'], 'Estancias Clínicas I – Comunidad': ['Patología Aplicada a la Fisioterapia'], 'Estancias Clínicas I – Neurología': ['Farmacología Aplicada a la Fisioterapia'], 'Modalidades de Graduación I': ['Bioinformática'],
+<!-- 8vo Semestre -->
+<div class="bloque-semestre">
+  <h2>8vo Semestre</h2>
+  <div class="materias">
+    <div class="materia">Imagenología Aplicada a la Fisioterapia</div>
+    <div class="materia">Evaluación Kinesica Funcional</div>
+    <div class="materia">Fisioterapia Laboral y Ergonomía</div>
+    <div class="materia">Bases Generales de la Psicomotricidad</div>
+    <div class="materia">Fisioterapia Deportiva</div>
+    <div class="materia">Bases Generales de la Terapia Manual</div>
+  </div>
+</div>
 
-'Manejo Kinesico Físico – Traumatología': ['Estancias Clínicas I – Traumatología'], 'Manejo Kinesico Físico – Ginecología y Obstetricia': ['Estancias Clínicas I – Ginecología y Obstetricia'], 'Rehabilitación Basada en la Comunidad': ['Estancias Clínicas I – Comunidad'], 'Manejo Kinesico Físico – Neurología': ['Estancias Clínicas I – Neurología'], 'Manejo Kinesico Físico – Dermatofunción': ['Modalidades de Graduación I'], 'Manejo Kinesico Físico – Cardiorespiratorio': ['Modalidades de Graduación I'], 'Electroterapia II': ['Modalidades de Graduación I'],
+<!-- 9no Semestre -->
+<div class="bloque-semestre">
+  <h2>9no Semestre</h2>
+  <div class="materias">
+    <div class="materia">Estancias Clínicas II – Adulto Mayor</div>
+    <div class="materia">Estancias Clínicas II – Quemados</div>
+    <div class="materia">Gestión en Salud</div>
+    <div class="materia">Estancias Clínicas II – Pediatría</div>
+    <div class="materia">Estancias Clínicas II – Estética</div>
+  </div>
+</div>
 
-'Imagenología Aplicada a la Fisioterapia': ['Manejo Kinesico Físico – Traumatología'], 'Evaluación Kinesica Funcional': ['Manejo Kinesico Físico – Ginecología y Obstetricia'], 'Fisioterapia Laboral y Ergonomía': ['Rehabilitación Basada en la Comunidad'], 'Bases Generales de la Psicomotricidad': ['Manejo Kinesico Físico – Neurología'], 'Estancias Clínicas II – Estética': ['Manejo Kinesico Físico – Dermatofunción'], 'Fisioterapia Deportiva': ['Manejo Kinesico Físico – Cardiorespiratorio'], 'Bases Generales de la Terapia Manual': ['Electroterapia II'],
+<!-- 10mo Semestre -->
+<div class="bloque-semestre">
+  <h2>10mo Semestre</h2>
+  <div class="materias">
+    <div class="materia">Modalidades de Graduación III</div>
+  </div>
+</div>
 
-'Estancias Clínicas II – Adulto Mayor': ['Imagenología Aplicada a la Fisioterapia'], 'Estancias Clínicas II – Quemados': ['Evaluación Kinesica Funcional'], 'Gestión en Salud': ['Fisioterapia Laboral y Ergonomía'], 'Estancias Clínicas II – Pediatría': ['Bases Generales de la Psicomotricidad'],
-
-'Modalidades de Graduación III': [ 'Estancias Clínicas II – Adulto Mayor', 'Estancias Clínicas II – Quemados', 'Gestión en Salud', 'Estancias Clínicas II – Pediatría', 'Estancias Clínicas II – Estética' ] };
-
-// Recuperar progreso guardado let aprobadas = JSON.parse(localStorage.getItem('aprobadas')) || [];
-
-function actualizarVista() { let total = 0;
-
-materias.forEach(el => { const nombre = el.textContent.trim(); el.classList.remove('aprobada', 'habilitada', 'bloqueada');
-
-if (aprobadas.includes(nombre)) {
-  el.classList.add('aprobada');
-  total++;
-} else if (
-  !prerrequisitos[nombre] ||
-  prerrequisitos[nombre].every(m => aprobadas.includes(m))
-) {
-  el.classList.add('habilitada');
-} else {
-  el.classList.add('bloqueada');
-}
-
-});
-
-contador.textContent = Materias aprobadas: ${total}; }
-
-function toggle(el) { const nombre = el.textContent.trim(); if (!el.classList.contains('habilitada') && !el.classList.contains('aprobada')) return;
-
-if (aprobadas.includes(nombre)) { aprobadas = aprobadas.filter(m => m !== nombre); } else { aprobadas.push(nombre); }
-
-actualizarVista(); localStorage.setItem('aprobadas', JSON.stringify(aprobadas)); }
-
-function guardarMalla() { localStorage.setItem('aprobadas', JSON.stringify(aprobadas)); alert('✅ Avance guardado correctamente.'); }
-
-function resetMalla() { if (confirm('¿Seguro que deseas reiniciar toda la malla?')) { aprobadas = []; localStorage.removeItem('aprobadas'); actualizarVista(); } }
-
-actualizarVista();
-
+  </div>  <script src="script.js"></script></body>
+  </html>
