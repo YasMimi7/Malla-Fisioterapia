@@ -1,63 +1,61 @@
-function toggle(element) {
-  element.classList.toggle("aprobada");
+const materias = document.querySelectorAll('.materia');
+const contador = document.getElementById('contador');
 
-  const id = element.id;
-  if (id) {
-    const estado = element.classList.contains("aprobada") ? "aprobada" : "";
-    localStorage.setItem(id, estado);
-  }
-
-  const siguienteId = element.dataset.habilita;
-  if (siguienteId) {
-    const siguiente = document.getElementById(siguienteId);
-    if (siguiente && element.classList.contains("aprobada")) {
-      siguiente.classList.remove("bloqueada");
-    } else if (siguiente) {
-      siguiente.classList.add("bloqueada");
-      siguiente.classList.remove("aprobada");
-      localStorage.setItem(siguienteId, "");
-    }
-  }
-
-  actualizarContador();
-}
-
-window.onload = () => {
-  const materias = document.querySelectorAll('.materia');
-  materias.forEach(materia => {
-    const id = materia.id;
-    if (id) {
-      const estado = localStorage.getItem(id);
-      if (estado === "aprobada") {
-        materia.classList.add("aprobada");
-        const siguienteId = materia.dataset.habilita;
-        if (siguienteId) {
-          const siguiente = document.getElementById(siguienteId);
-          if (siguiente) siguiente.classList.remove("bloqueada");
-        }
-      }
-    }
-  });
-  actualizarContador();
+const prerrequisitos = {
+  // Agrega aquí todos los prerrequisitos que ya te pasé (el archivo completo lo tienes actualizado)
 };
 
-function resetMalla() {
-  const confirmar = confirm("¿Estás segura de que quieres borrar todo tu avance?");
-  if (confirmar) {
-    localStorage.clear();
-    location.reload();
+let aprobadas = JSON.parse(localStorage.getItem('aprobadas')) || [];
+
+function actualizarVista() {
+  let total = 0;
+
+  materias.forEach(el => {
+    const nombre = el.textContent.trim();
+    el.classList.remove('aprobada', 'habilitada', 'bloqueada');
+
+    if (aprobadas.includes(nombre)) {
+      el.classList.add('aprobada');
+      total++;
+    } else if (!prerrequisitos[nombre] || prerrequisitos[nombre].every(p => aprobadas.includes(p))) {
+      el.classList.add('habilitada');
+    } else {
+      el.classList.add('bloqueada');
+    }
+  });
+
+  contador.textContent = `Materias aprobadas: ${total}`;
+}
+
+function toggleMateria(el) {
+  const nombre = el.textContent.trim();
+  if (!el.classList.contains('habilitada') && !el.classList.contains('aprobada')) return;
+
+  if (aprobadas.includes(nombre)) {
+    aprobadas = aprobadas.filter(m => m !== nombre);
+  } else {
+    aprobadas.push(nombre);
   }
+
+  localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
+  actualizarVista();
 }
 
 function guardarMalla() {
-  alert("¡Tu avance se ha guardado exitosamente! 💾");
+  localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
+  alert('✅ Avance guardado correctamente.');
 }
 
-function actualizarContador() {
-  const total = document.querySelectorAll('.materia').length;
-  const aprobadas = document.querySelectorAll('.materia.aprobada').length;
-  const contador = document.getElementById('contador');
-  if (contador) {
-    contador.textContent = `Materias aprobadas: ${aprobadas} / ${total}`;
+function resetMalla() {
+  if (confirm('¿Seguro que deseas reiniciar toda la malla?')) {
+    aprobadas = [];
+    localStorage.removeItem('aprobadas');
+    actualizarVista();
   }
 }
+
+materias.forEach(el => {
+  el.addEventListener('click', () => toggleMateria(el));
+});
+
+actualizarVista();
